@@ -1,0 +1,413 @@
+/* --- RESET BÁSICO --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif; 
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #0d0d0f;
+    color: #e0e0e0;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* --- HERO SECTION --- */
+.hero-section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 40px 5%;
+    position: relative;
+}
+
+/* Navegação Superior */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    z-index: 10;
+}
+
+.logo {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: #b3b3b3;
+    text-decoration: none;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #ffffff;
+}
+
+/* Botão de Idioma */
+.lang-btn {
+    background: transparent;
+    border: 1px solid #444;
+    color: #fff;
+    padding: 6px 14px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Syne', sans-serif;
+}
+
+.lang-btn:hover {
+    border-color: #fff;
+    background-color: #fff;
+    color: #000;
+}
+
+/* Conteúdo Central */
+.hero-content {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.main-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 8rem;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1;
+    letter-spacing: -2px;
+    text-shadow: 0 0 25px rgba(255, 255, 255, 0.12);
+}
+
+/* Efeito de afastar as letras e intensificar o brilho ao passar o mouse */
+.hover-spacing {
+    transition: letter-spacing 0.4s ease, text-shadow 0.4s ease;
+    cursor: default;
+}
+
+.hover-spacing:hover {
+    letter-spacing: 15px;
+    text-shadow: 0 0 35px rgba(255, 255, 255, 0.35), 0 0 60px rgba(255, 255, 255, 0.15);
+}
+
+.subtext-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.horizontal-line {
+    width: 60px;
+    height: 1px;
+    background-color: #666;
+}
+
+.sub-title {
+    font-size: 1.1rem;
+    color: #a0a0a0;
+    font-weight: 400;
+    line-height: 1.4;
+    text-align: left;
+}
+
+/* Identificador de Comissões Abertas no Canto Inferior Esquerdo */
+.status-badge {
+    position: absolute;
+    bottom: 40px;
+    left: 5%;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    color: #b3b3b3;
+    z-index: 10;
+}
+
+.status-dot {
+    width: 6px;
+    height: 6px;
+    background-color: #22c55e;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #22c55e, 0 0 12px rgba(34, 197, 94, 0.6);
+}
+
+/* Indicador Scroll Down */
+.scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    right: 5%;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transform: rotate(90deg);
+    transform-origin: right bottom;
+}
+
+.scroll-indicator p {
+    font-size: 0.7rem;
+    color: #888;
+    letter-spacing: 2px;
+    text-transform: lowercase;
+}
+
+.scroll-indicator .vertical-line {
+    width: 40px;
+    height: 1px;
+    background-color: #888;
+}
+
+/* --- SEÇÃO DE CARDS DE NAVEGAÇÃO --- */
+.nav-cards-section {
+    padding: 100px 5%;
+    background-color: #09090b;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.section-header {
+    margin-bottom: 50px;
+}
+
+.section-tag {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    color: #888;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.section-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: -1px;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.nav-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 8px;
+    padding: 40px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 280px;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.nav-card:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.nav-card:hover::before {
+    opacity: 1;
+}
+
+.card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.card-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #666;
+    letter-spacing: 1px;
+}
+
+.card-indicator {
+    width: 6px;
+    height: 6px;
+    background-color: #555;
+    border-radius: 50%;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.active-dot {
+    background-color: #22c55e;
+    box-shadow: 0 0 8px #22c55e;
+}
+
+.nav-card:hover .card-indicator:not(.active-dot) {
+    background-color: #fff;
+    box-shadow: 0 0 8px #fff;
+}
+
+.card-content h3 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+}
+
+.card-content p {
+    font-size: 0.95rem;
+    color: #999;
+    line-height: 1.5;
+}
+
+.card-action {
+    margin-top: 30px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #bbb;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-card:hover .card-action {
+    color: #fff;
+    transform: translateX(5px);
+}
+
+/* Responsivo para telas menores */
+@media (max-width: 968px) {
+    .cards-grid {
+        grid-template-columns: 1fr;
+    }
+    .main-title {
+        font-size: 5rem;
+    }
+}
+
+/* --- REDES SOCIAIS ABAIXO DOS CARDS --- */
+.social-links-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin-top: 60px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #b3b3b3;
+    text-decoration: none;
+    font-size: 0.95rem; /* Aumentado */
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-link svg {
+    stroke: #b3b3b3;
+    transition: stroke 0.3s ease;
+}
+
+.social-link:hover {
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.social-link:hover svg {
+    stroke: #fff;
+}
+
+@media (max-width: 768px) {
+    .social-links-container {
+        flex-direction: column;
+        gap: 25px;
+    }
+}
+
+/* ==========================================
+   BARRA DE ROLAGEM PERSONALIZADA (GLOBAL)
+   ========================================== */
+
+/* Para navegadores Chrome, Edge, Safari e Opera (WebKit) */
+::-webkit-scrollbar {
+    width: 9px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0a0a0a; /* Fundo escuro combinando com o site */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #262626; /* Cor da barrinha (puxador) */
+    border-radius: 6px;  /* Bordas arredondadas */
+    border: 2px solid #0a0a0a; /* Cria um efeito moderno flutuante */
+    transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #404040; /* Cor da barrinha ao passar o mouse */
+}
+
+/* Para o navegador Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #262626 #0a0a0a;
+}

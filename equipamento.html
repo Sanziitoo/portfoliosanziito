@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanziito | Equipamentos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Navegação Superior -->
+    <header class="hero-section" style="height: auto; min-height: 100vh;">
+        <nav class="navbar">
+            <a href="index.html" class="logo" style="text-decoration: none;">Sanziito</a>
+            
+            <div class="nav-right">
+                <ul class="nav-links">
+                    <li><a href="index.html" data-pt="INÍCIO" data-en="HOME">INÍCIO</a></li>
+                    <li><a href="sobremim.html" data-pt="SOBRE MIM" data-en="ABOUT ME">SOBRE MIM</a></li>
+                    <li><a href="faixas.html" data-pt="FAIXAS" data-en="TRACKS">FAIXAS</a></li>
+                    <li><a href="preços.html" data-i18n="nav-prices">PREÇOS</a></li>
+                    <li><a href="equipamento.html" style="color: #fff;" data-pt="EQUIPAMENTOS" data-en="GEAR">EQUIPAMENTOS</a></li>
+                    <li><a href="contato.html" data-pt="CONTATO" data-en="CONTACT">CONTATO</a></li>
+                    <li><a href="termos.html" style="color: #fff;" data-pt="TERMOS DE SERVIÇO" data-en="TERMS OF SERVICE">TERMOS DE SERVIÇO</a></li>
+                </ul>
+                
+                <button id="lang-toggle" class="lang-btn">EN</button>
+            </div>
+        </nav>
+
+        <!-- Conteúdo da Página de Equipamentos -->
+        <section class="nav-cards-section" style="padding: 60px 0; background: transparent; border: none; width: 100%;">
+            <div class="section-header" style="text-align: center; margin-bottom: 50px;">
+                <span class="section-tag" data-pt="// SETUP & HARDWARE" data-en="// SETUP & HARDWARE">// SETUP & HARDWARE</span>
+                <h2 class="section-title" style="font-size: 2.5rem; margin-top: 10px;" data-pt="Equipamentos & Estúdio" data-en="Equipment & Studio">Equipamentos & Estúdio</h2>
+            </div>
+
+            <!-- Grid de 2 colunas para DAW e Setup -->
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; max-width: 900px; margin: 0 auto;">
+                
+                <!-- Card 1: DAW (Abre daw.html) -->
+                <a href="daw.html" class="nav-card">
+                    <div class="card-top">
+                        <span class="card-num">01</span>
+                        <span class="card-indicator"></span>
+                    </div>
+                    <div class="card-content">
+                        <h3 data-pt="DAW" data-en="DAW">DAW</h3>
+                        <p data-pt="O ambiente de trabalho digital, plugins e instrumentos virtuais essenciais para moldar cada batida e trilha." data-en="The digital workspace, plugins, and virtual instruments essential to shaping every beat and track.">O ambiente de trabalho digital, plugins e instrumentos virtuais essenciais para moldar cada batida e trilha.</p>
+                    </div>
+                    <div class="card-action">
+                        <span data-pt="Explorar &rarr;" data-en="Explore &rarr;">Explorar &rarr;</span>
+                    </div>
+                </a>
+
+                <!-- Card 2: Setup (Abre setup.html) -->
+                <a href="setup.html" class="nav-card">
+                    <div class="card-top">
+                        <span class="card-num">02</span>
+                        <span class="card-indicator"></span>
+                    </div>
+                    <div class="card-content">
+                        <h3 data-pt="Setup" data-en="Setup">Setup</h3>
+                        <p data-pt="O hardware, monitores, microfones e periféricos que dão forma ao espaço físico de produção." data-en="The hardware, monitors, microphones, and peripherals that shape the physical production space.">O hardware, monitores, microfones e periféricos que dão forma ao espaço físico de produção.</p>
+                    </div>
+                    <div class="card-action">
+                        <span data-pt="Explorar &rarr;" data-en="Explore &rarr;">Explorar &rarr;</span>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+    </header>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

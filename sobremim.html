@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanziito | Sobre Mim</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Garante que o logo não tenha linha embaixo */
+        .logo {
+            text-decoration: none !important;
+        }
+
+        /* Wrapper para espelhar exatamente o padding lateral e superior da .hero-section */
+        .page-header-wrapper {
+            padding: 40px 5% 0 5%;
+        }
+        
+        /* Seção de conteúdo seguindo o design system do style.css */
+        .about-section {
+            padding: 60px 5% 100px 5%;
+        }
+
+        .about-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 8px;
+            padding: 50px;
+            max-width: 900px;
+            margin: 0 auto;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .about-text {
+            color: #999;
+            font-size: 1rem;
+            line-height: 1.8;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .about-text strong {
+            color: #fff;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .about-card {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar posicionada exatamente com o espaçamento padrão do site -->
+    <div class="page-header-wrapper">
+        <nav class="navbar">
+            <a href="index.html" class="logo">Sanziito</a>
+            <div class="nav-right">
+                <ul class="nav-links">
+                    <li><a href="index.html">INÍCIO</a></li>
+                    <li><a href="sobremim.html" style="color: #fff;">SOBRE MIM</a></li>
+                    <li><a href="faixas.html">FAIXAS</a></li>
+                    <li><a href="equipamento.html">EQUIPAMENTOS</a></li>
+                    <li><a href="preços.html">PREÇOS</a></li>
+                    <li><a href="contato.html">CONTATO</a></li>
+                    <li><a href="termos.html">TERMOS DE SERVIÇO</a></li>
+                </ul>
+                <button id="lang-toggle" class="lang-btn">EN</button>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Conteúdo Principal -->
+    <main class="about-section">
+        <div class="section-header" style="max-width: 900px; margin: 0 auto 40px auto;">
+            <span class="section-tag">// TRAJETÓRIA & HISTÓRIA</span>
+            <h1 class="section-title">Sobre Mim</h1>
+        </div>
+
+        <div class="about-card">
+            <div class="about-text">
+                <p data-pt="Olá! Meu nome é <strong>Sanziito</strong>. Sou produtor musical e sound designer há 7 anos, com ampla experiência na criação de trilhas sonoras... Ah, você já deve estar saturado dessas apresentações né? Nada melhor que contar uma história para me apresentar." 
+                   data-en="Hello! My name is <strong>Sanziito</strong>. I've been a music producer and sound designer for 7 years, with extensive experience in creating soundtracks... Ah, you must be pretty tired of these presentations by now, right? Nothing better than telling a story to introduce myself properly.">
+                    Olá! Meu nome é <strong>Sanziito</strong>. Sou produtor musical e sound designer há 7 anos, com ampla experiência na criação de trilhas sonoras... Ah, você já deve estar saturado dessas apresentações né? Nada melhor que contar uma história para me apresentar.
+                </p>
+
+                <p data-pt="Minha jornada começou em 2019, quando descobri o universo dos softwares e dos bastidores musicais através de vídeos no YouTube. Mergulhei de cabeça nos estudos, o que fazia todo o sentido considerando minhas origens. Cresci em uma casa onde a arte sonora sempre esteve presente: meu pai montou uma banda de pagode do zero e minha irmã mais velha focou seu talento no violão. Toda essa atmosfera em casa me contagiou de vez, fazendo com que eu me apaixonasse pelo violão e, pouco tempo depois, adquirisse minha primeira guitarra."
+                   data-en="My journey began in 2019, when I discovered the universe of software and music behind-the-scenes through YouTube videos. I dove headfirst into studies, which made total sense considering my origins. I grew up in a house where sonic art was always present: my father put together a pagode band from scratch and my older sister focused her talent on the acoustic guitar. That whole atmosphere at home infected me for good, making me fall in love with the acoustic guitar and, shortly after, acquire my first electric guitar.">
+                    Minha jornada começou em 2019, quando descobri o universo dos softwares e dos bastidores musicais através de vídeos no YouTube. Mergulhei de cabeça nos estudos, o que fazia todo o sentido considerando minhas origens. Cresci em uma casa onde a arte sonora sempre esteve presente: meu pai montou uma banda de pagode do zero e minha irmã mais velha focou seu talento no violão. Toda essa atmosfera em casa me contagiou de vez, fazendo com que eu me apaixonasse pelo violão e, pouco tempo depois, adquirisse minha primeira guitarra.
+                </p>
+
+                <p data-pt="Decidido a aprender de verdade e dominar o instrumento, fui atrás de aulas por toda a cidade até encontrar alguém disposto a me guiar com paciência. O detalhe curioso é que meu professor de guitarra, por pura coincidência, também era o meu professor na escola daquela época. Esse apoio inicial deu o empurrão que eu precisava para evoluir."
+                   data-en="Determined to truly learn and master the instrument, I hunted for lessons all over town until I found someone willing to guide me with patience. The curious detail is that my guitar teacher, by pure coincidence, was also my school teacher back at that time. This initial support gave me the push I needed to evolve.">
+                    Decidido a aprender de verdade e dominar o instrumento, fui atrás de aulas por toda a cidade até encontrar alguém disposto a me guiar com paciência. O detalhe curioso é que meu professor de guitarra, por pura coincidência, também era o meu professor na escola daquela época. Esse apoio inicial deu o empurrão que eu precisava para evoluir.
+                </p>
+
+                <p data-pt="Minha aventura na produção de fato começou no FL Studio. Na primeira vez que abri a DAW, parecia o painel de controle de um avião! Mas, com o tempo, fui pegando o jeito e entendendo como tudo funcionava. Em 2020, lancei minha primeira música: 'Meu Girassol', um instrumental que sempre me emociona. Ela foi criada em homenagem à minha avó, que havia falecido duas semanas antes de eu começar a produzir de verdade. Eu ainda não sabia produzir direito, mas me entreguei totalmente àquele momento para fazer algo de coração. Hoje, decidi privar essa faixa em algumas redes; é uma lembrança muito íntima que quero guardar para mim para sempre."
+                   data-en="My actual production adventure started with FL Studio. The first time I opened the DAW, it looked like an airplane control panel! But over time, I got the hang of it and figured out how everything worked. In 2020, I released my first song: 'Meu Girassol', an instrumental that always brings me to tears. It was created as a tribute to my grandmother, who had passed away two weeks before I started producing seriously. I didn't really know how to produce yet, but I poured my heart into that moment to make something genuine. Today, I've privated that track on some networks; it's an intimate memory I want to keep for myself forever.">
+                    Minha aventura na produção de fato começou no FL Studio. Na primeira vez que abri a DAW, parecia o painel de controle de um avião! Mas, com o tempo, fui pegando o jeito e entendendo como tudo funcionava. Em 2020, lancei minha primeira música: 'Meu Girassol', um instrumental que sempre me emociona. Ela foi criada em homenagem à minha avó, que havia falecido duas semanas antes de eu começar a produzir de verdade. Eu ainda não sabia produzir direito, mas me entreguei totalmente àquele momento para fazer algo de coração. Hoje, decidi privar essa faixa em algumas redes; é uma lembrança muito íntima que quero guardar para mim para sempre.
+                </p>
+
+                <p data-pt="Ainda em 2020, no final de outubro, conheci o Ableton. Na época, eu não tinha condições de comprar e nem conhecimento para conseguir de formas 'alternativas', sabe? Era a DAW dos meus sonhos, usada por criadores que eu acompanhava, e eu simplesmente me apaixonei pela interface dela. Hoje, tenho muito orgulho de olhar para trás e ver que conquistei e dominei não só o Ableton, mas também o Cubase e o FL Studio. Acredito que o segredo é esse: estar sempre disposto a aprender algo novo."
+                   data-en="Still in 2020, at the end of October, I discovered Ableton. Back then, I couldn't afford it nor did I have the know-how to get it through 'alternative' ways, you know? It was my dream DAW, used by creators I followed, and I simply fell in love with its interface. Today, I'm very proud to look back and see that I've conquered and mastered not only Ableton, but also Cubase and FL Studio. I believe that's the secret: always being willing to learn something new.">
+                    Ainda em 2020, no final de outubro, conheci o Ableton. Na época, eu não tinha condições de comprar e nem conhecimento para conseguir de formas 'alternativas', sabe? Era a DAW dos meus sonhos, usada por criadores que eu acompanhava, e eu simplesmente me apaixonei pela interface dela. Hoje, tenho muito orgulho de olhar para trás e ver que conquistei e dominei não só o Ableton, mas também o Cubase e o FL Studio. Acredito que o segredo é esse: estar sempre disposto a aprender algo novo.
+                </p>
+
+                <p data-pt="Por trás de cada passo, levo comigo um ensinamento inestimável. Um mês antes de falecer, minha avó me disse uma frase que virou meu maior dilema de vida: <strong>'Não seja afetado pelas decisões e vontades de outras pessoas, seu caminho é feito por você e por quem você escolhe ser.'</strong> Sempre repito isso para meus amigos e para quem me pede conselhos, pois é o norte que guia minha jornada."
+                   data-en="Behind every step, I carry an invaluable lesson with me. A month before she passed away, my grandmother told me something that became my ultimate life motto: <strong>'Don't be affected by other people's decisions and desires; your path is made by you and who you choose to be.'</strong> I always repeat this to my friends and anyone who asks me for advice, as it's the guiding light of my journey.">
+                    Por trás de cada passo, levo comigo um ensinamento inestimável. Um mês antes de falecer, minha avó me disse uma frase que virou meu maior dilema de vida: <strong>"Não seja afetado pelas decisões e vontades de outras pessoas, seu caminho é feito por você e por quem você escolhe ser."</strong> Sempre repito isso para meus amigos e para quem me pede conselhos, pois é o norte que guia minha jornada.
+                </p>
+
+                <p data-pt="Hoje, estou prestes a concluir meu Bacharelado em Música. Olho para trás e percebo o quanto cada desafio superado valeu a pena. Sou imensamente grato a todas as pessoas que sempre me incentivaram e deram suporte inestimável. Celebrando 7 anos de carreira, 2026 marca um dos maiores pontos altos para mim como artista: o momento em que de fato me sinto um produtor musical completo, alguém capaz de transformar palavras em música, imagens em música, pessoas em música. Só tenho a agradecer à música por todas as portas que se abriram e por tudo o que conquistei até aqui."
+                   data-en="Today, I am about to complete my Bachelor's degree in Music. I look back and realize how much every overcome challenge was worth it. I am immensely grateful to everyone who has always encouraged and given me unconditional support. Celebrating 7 years of career, 2026 marks one of the highest points for me as an artist—the moment I truly consider myself a music producer, someone capable of turning words into music, images into music, people into music. I can only thank music for all the doors that opened and everything I've achieved so far.">
+                    Hoje, estou prestes a concluir meu Bacharelado em Música. Olho para trás e percebo o quanto cada desafio superado valeu a pena. Sou imensamente grato a todas as pessoas que sempre me incentivaram e deram suporte inestimável. Celebrando 7 anos de carreira, 2026 marca um dos maiores pontos altos para mim como artista: o momento em que de fato me sinto um produtor musical completo, alguém capaz de transformar palavras em música, imagens em música, pessoas em música. Só tenho a agradecer à música por todas as portas que se abriram e por tudo o que conquistei até aqui.
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

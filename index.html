@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanziito | Produtor Musical & Compositor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Estilos interativos para o nome Sanziito */
+        .main-title {
+            cursor: pointer;
+            position: relative;
+            display: inline-block;
+            user-select: none;
+            transition: transform 0.15s ease, text-shadow 0.3s ease;
+        }
+        .main-title:hover {
+            text-shadow: 0 0 25px rgba(255, 255, 255, 0.25);
+        }
+        .main-title:active {
+            transform: scale(0.97);
+        }
+
+        /* Estilo dos corvinhos voadores maiores */
+        .flying-crow {
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            animation: flyAway var(--duration) cubic-bezier(0.25, 1, 0.5, 1) forwards;
+            opacity: 0;
+        }
+
+        .crow-inner {
+            animation: wingFlap 0.3s ease-in-out infinite alternate;
+            transform-origin: center;
+        }
+
+        @keyframes flyAway {
+            0% {
+                transform: translate(0, 0) scale(0.4) rotate(0deg);
+                opacity: 0;
+            }
+            15% {
+                opacity: 1;
+            }
+            100% {
+                transform: translate(var(--dx), var(--dy)) scale(var(--scale)) rotate(var(--rot));
+                opacity: 0;
+            }
+        }
+
+        @keyframes wingFlap {
+            0% {
+                transform: scaleY(1) rotate(-8deg);
+            }
+            100% {
+                transform: scaleY(0.25) rotate(8deg) translateY(3px);
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- Hero Section -->
+    <header class="hero-section" id="home">
+        <!-- Navegação Superior -->
+        <nav class="navbar">
+            <a href="index.html" class="logo" style="text-decoration: none;">Sanziito</a>
+            
+            <div class="nav-right">
+                <ul class="nav-links">
+                    <li><a href="index.html" style="color: #fff;" data-pt="INÍCIO" data-en="HOME">INÍCIO</a></li>
+                    <li><a href="sobremim.html" data-pt="SOBRE MIM" data-en="ABOUT ME">SOBRE MIM</a></li>
+                    <li><a href="faixas.html" data-pt="FAIXAS" data-en="TRACKS">FAIXAS</a></li>
+                    <li><a href="equipamento.html" data-pt="EQUIPAMENTOS" data-en="GEAR">EQUIPAMENTOS</a></li>
+                    <li><a href="preços.html" data-pt="PREÇOS" data-en="PRICING">PREÇOS</a></li>
+                    <li><a href="contato.html" data-pt="CONTATO" data-en="CONTACT">CONTATO</a></li>
+                    <li><a href="termos.html" data-pt="TERMOS DE SERVIÇO" data-en="TERMS OF SERVICE">TERMOS DE SERVIÇO</a></li>
+                </ul>
+                
+                <button id="lang-toggle" class="lang-btn">EN</button>
+            </div>
+        </nav>
+
+        <!-- Textos Centrais -->
+        <div class="hero-content">
+            <h1 class="main-title hover-spacing" title="Clique para espantar os corvos">Sanziito</h1>
+            <div class="subtext-wrapper">
+                <span class="horizontal-line"></span>
+                <p class="sub-title" data-pt="Produtor Musical<br>& Compositor" data-en="Music Producer<br>& Songwriter">
+                    Produtor Musical<br>& Compositor
+                </p>
+            </div>
+        </div>
+
+        <!-- Indicador de Status no Canto Inferior Esquerdo -->
+        <div class="status-badge">
+            <span class="status-dot"></span>
+            <span data-pt="COMISSÕES ABERTAS" data-en="COMMISSIONS OPEN">COMISSÕES ABERTAS</span>
+        </div>
+        
+        <!-- Indicador de Scroll -->
+        <div class="scroll-indicator">
+            <p data-pt="role para baixo" data-en="scroll down">role para baixo</p>
+            <div class="vertical-line"></div>
+        </div>
+    </header>
+
+    <!-- Seção de Menu de Navegação Estilizado (Cards) -->
+    <section class="nav-cards-section" id="navegacao-geral">
+        <div class="section-header">
+            <span class="section-tag" data-pt="// EXPLORE O SITE" data-en="// EXPLORE THE SITE">// EXPLORE O SITE</span>
+            <h2 class="section-title" data-pt="Navegação Principal" data-en="Main Navigation">Navegação Principal</h2>
+        </div>
+
+        <div class="cards-grid">
+            <!-- Card 01: Sobre Mim -->
+            <a href="sobremim.html" class="nav-card">
+                <div class="card-top">
+                    <span class="card-num">01</span>
+                    <span class="card-indicator"></span>
+                </div>
+                <div class="card-content">
+                    <h3 data-pt="SOBRE MIM" data-en="ABOUT ME">SOBRE MIM</h3>
+                    <p data-pt="Conheça minha história, trajetória e os 7 anos de experiência na produção musical." data-en="Learn my story, background, and 7 years of experience in music production.">Conheça minha história, trajetória e os 7 anos de experiência na produção musical.</p>
+                </div>
+                <div class="card-action">
+                    <span data-pt="Ler sobre mim &rarr;" data-en="Read about me &rarr;">Ler sobre mim &rarr;</span>
+                </div>
+            </a>
+
+            <!-- Card 02: Faixas -->
+            <a href="faixas.html" class="nav-card">
+                <div class="card-top">
+                    <span class="card-num">02</span>
+                    <span class="card-indicator"></span>
+                </div>
+                <div class="card-content">
+                    <h3 data-pt="FAIXAS" data-en="TRACKS">FAIXAS</h3>
+                    <p data-pt="Ouça produções musicais originais, trilhas sonoras, beats e projetos autorais imersivos." data-en="Listen to original music productions, soundtracks, beats, and immersive self-projects.">Ouça produções musicais originais, trilhas sonoras, beats e projetos autorais imersivos.</p>
+                </div>
+                <div class="card-action">
+                    <span data-pt="Explorar faixas &rarr;" data-en="Explore tracks &rarr;">Explorar faixas &rarr;</span>
+                </div>
+            </a>
+
+            <!-- Card 03: Equipamentos -->
+            <a href="equipamento.html" class="nav-card">
+                <div class="card-top">
+                    <span class="card-num">03</span>
+                    <span class="card-indicator"></span>
+                </div>
+                <div class="card-content">
+                    <h3 data-pt="EQUIPAMENTOS" data-en="GEAR">EQUIPAMENTOS</h3>
+                    <p data-pt="Conheça o setup de hardware, instrumentos, microfones e ferramentas de estúdio utilizadas." data-en="Check out the hardware setup, instruments, microphones, and studio tools used.">Conheça o setup de hardware, instrumentos, microfones e ferramentas de estúdio utilizadas.</p>
+                </div>
+                <div class="card-action">
+                    <span data-pt="Ver equipamentos &rarr;" data-en="View gear &rarr;">Ver equipamentos &rarr;</span>
+                </div>
+            </a>
+
+            <!-- Card 04: Preços -->
+            <a href="preços.html" class="nav-card">
+                <div class="card-top">
+                    <span class="card-num">04</span>
+                    <span class="card-indicator"></span>
+                </div>
+                <div class="card-content">
+                    <h3 data-pt="PREÇOS" data-en="PRICING">PREÇOS</h3>
+                    <p data-pt="Confira os valores, pacotes e condições para comissões e produções musicais sob medida." data-en="Check out prices, packages, and terms for commissions and custom music productions.">Confira os valores, pacotes e condições para comissões e produções musicais sob medida.</p>
+                </div>
+                <div class="card-action">
+                    <span data-pt="Ver preços &rarr;" data-en="View pricing &rarr;">Ver preços &rarr;</span>
+                </div>
+            </a>
+
+            <!-- Card 05: Contato -->
+            <a href="contato.html" class="nav-card">
+                <div class="card-top">
+                    <span class="card-num">05</span>
+                    <span class="card-indicator active-dot"></span>
+                </div>
+                <div class="card-content">
+                    <h3 data-pt="CONTATO" data-en="CONTACT">CONTATO</h3>
+                    <p data-pt="Entre em contato para parcerias, orçamentos, dúvidas ou comissões abertas." data-en="Get in touch for partnerships, quotes, inquiries, or open commissions.">Entre em contato para parcerias, orçamentos, dúvidas ou comissões abertas.</p>
+                </div>
+                <div class="card-action">
+                    <span data-pt="Entrar em contato &rarr;" data-en="Get in touch &rarr;">Entrar em contato &rarr;</span>
+                </div>
+            </a>
+        </div>
+
+        <!-- Redes Sociais Minimalistas -->
+        <div class="social-links-container">
+            <a href="https://www.instagram.com/prodsanziito/" target="_blank" rel="noopener noreferrer" class="social-link" title="Instagram">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                <span>Instagram</span>
+            </a>
+            <a href="https://www.youtube.com/@Sanziito" target="_blank" rel="noopener noreferrer" class="social-link" title="YouTube">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"></path><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="currentColor"></polygon></svg>
+                <span>YouTube</span>
+            </a>
+            <a href="https://open.spotify.com/intl-pt/artist/3dImOgBCLpqSv8Ocxvnc9A" target="_blank" rel="noopener noreferrer" class="social-link" title="Spotify">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M8 14.5c2.5-1 5.5-1 8 0"></path><path d="M6.5 11.5c3-1.5 8-1.5 11 0"></path><path d="M9.5 8.5c2-1 5-1 7 0"></path></svg>
+                <span>Spotify</span>
+            </a>
+        </div>
+    </section>
+
+    <script>
+        // Animação interativa dos corvinhos maiores com dispersão completa em 360 graus
+        document.addEventListener('DOMContentLoaded', () => {
+            const mainTitle = document.querySelector('.main-title');
+            
+            if (mainTitle) {
+                mainTitle.addEventListener('click', (e) => {
+                    const rect = mainTitle.getBoundingClientRect();
+                    const centerX = rect.left + rect.width / 2;
+                    const centerY = rect.top + rect.height / 2;
+
+                    const crowCount = 14;
+
+                    const baseAngle = Math.random() * Math.PI * 2;
+                    const spreadWidth = Math.PI * (0.8 + Math.random() * 1.0);
+
+                    for (let i = 0; i < crowCount; i++) {
+                        createCrow(centerX, centerY, baseAngle, spreadWidth);
+                    }
+                });
+            }
+
+            function createCrow(originX, originY, baseAngle, spreadWidth) {
+                const crow = document.createElement('div');
+                crow.className = 'flying-crow';
+
+                const angle = baseAngle + (Math.random() - 0.5) * spreadWidth;
+                const distance = 240 + Math.random() * 420; 
+
+                const dx = Math.cos(angle) * distance;
+                const dy = Math.sin(angle) * distance; 
+                
+                const scale = 0.7 + Math.random() * 0.8;
+                const rot = (Math.random() * 80 - 40) + (Math.cos(angle) > 0 ? 15 : -15);
+                const duration = 1.1 + Math.random() * 1.1;
+
+                crow.style.setProperty('--dx', `${dx}px`);
+                crow.style.setProperty('--dy', `${dy}px`);
+                crow.style.setProperty('--scale', scale);
+                crow.style.setProperty('--rot', `${rot}deg`);
+                crow.style.setProperty('--duration', `${duration}s`);
+
+                crow.style.left = `${originX + (Math.random() * 60 - 30)}px`;
+                crow.style.top = `${originY + (Math.random() * 20 - 10)}px`;
+
+                crow.innerHTML = `
+                    <div class="crow-inner">
+                        <svg viewBox="0 0 24 24" width="52" height="52" fill="#ffffff">
+                            <path d="M21.6,11.5c-2.3-1.3-5.1-1-7.1,0.5C13,8,9.5,6,6,7c1,2.5,3,4.5,5,5.5c-2,1-5,2-8,0.5c2,3,6,4,9,3c3,1,7,0,9.6-4.5C23.6,14.5,23.6,12.5,21.6,11.5z"/>
+                        </svg>
+                    </div>
+                `;
+
+                document.body.appendChild(crow);
+
+                setTimeout(() => {
+                    crow.remove();
+                }, duration * 1000);
+            }
+        });
+    </script>
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanziito | Contato</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            width: 100%;
+            margin-top: 40px;
+        }
+        .contact-card {
+            background: #141414;
+            border: 1px solid #222;
+            padding: 30px;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .contact-card:hover {
+            border-color: #444;
+            transform: translateY(-2px);
+        }
+        .contact-card h3 {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.25rem;
+            margin: 0 0 10px 0;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .contact-card p {
+            font-size: 0.9rem;
+            color: #888;
+            margin: 0 0 20px 0;
+            line-height: 1.5;
+        }
+        .contact-link {
+            font-family: 'Syne', sans-serif;
+            font-size: 0.9rem;
+            color: #fff;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .badge-tag {
+            font-size: 0.7rem;
+            color: #888;
+            background: #1f1f1f;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 12px;
+            width: fit-content;
+        }
+    </style>
+</head>
+<body style="background: #0a0a0a; color: #fff; font-family: 'Inter', sans-serif;">
+
+    <header class="hero-section" style="height: auto; min-height: 100vh;">
+        <nav class="navbar">
+            <a href="index.html" class="logo" style="text-decoration: none;">Sanziito</a>
+            <div class="nav-right">
+                <ul class="nav-links">
+                    <li><a href="index.html" data-i18n="nav-home">INÍCIO</a></li>
+                    <li><a href="sobremim.html" data-pt="SOBRE MIM" data-en="ABOUT ME">SOBRE MIM</a></li>
+                    <li><a href="faixas.html" data-i18n="nav-tracks">FAIXAS</a></li>
+                    <li><a href="equipamento.html" data-i18n="nav-gear">EQUIPAMENTOS</a></li>
+                    <li><a href="preços.html" data-i18n="nav-prices">PREÇOS</a></li>
+                    <li><a href="contato.html" style="color: #fff;" data-i18n="nav-contact">CONTATO</a></li>
+                    <li><a href="termos.html" data-i18n="nav-terms">TERMOS DE SERVIÇO</a></li>
+                </ul>
+                <button id="lang-toggle" class="lang-btn" onclick="toggleLanguage()">EN</button>
+            </div>
+        </nav>
+
+        <section style="padding: 60px 20px 100px 20px; max-width: 1100px; margin: 0 auto; width: 100%; box-sizing: border-box; text-align: left;">
+            
+            <div style="text-align: center; margin-bottom: 40px;">
+                <span style="font-size: 0.85rem; color: #888; letter-spacing: 2px; text-transform: uppercase; display: block; margin-bottom: 10px;" data-i18n="subtitle">// CONTATO & REDES</span>
+                <h2 style="font-family: 'Syne', sans-serif; font-size: 2.5rem; margin: 0 0 15px 0; letter-spacing: 1px;" data-i18n="main-title">Onde me encontrar</h2>
+                <p style="color: #888; font-size: 1rem; max-width: 600px; margin: 0 auto;" data-i18n="contact-desc">Entre em contato, acompanhe os projetos ou mande uma mensagem nas redes abaixo:</p>
+            </div>
+
+            <div class="contact-grid">
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/prodsanziito/" target="_blank" class="contact-card">
+                    <div>
+                        <span class="badge-tag">SOCIAL</span>
+                        <h3 data-i18n="ig-title">Instagram <span>↗</span></h3>
+                        <p data-i18n="ig-desc">Acompanhe bastidores, prévias e novidades do estúdio.</p>
+                    </div>
+                    <div class="contact-link">@prodsanziito</div>
+                </a>
+
+                <!-- YouTube -->
+                <a href="https://www.youtube.com/@Sanziito" target="_blank" class="contact-card">
+                    <div>
+                        <span class="badge-tag">VÍDEOS & ÁUDIO</span>
+                        <h3 data-i18n="yt-title">YouTube <span>↗</span></h3>
+                        <p data-i18n="yt-desc">Ouça trilhas completas, OSTs e demonstrações de produções.</p>
+                    </div>
+                    <div class="contact-link">@Sanziito</div>
+                </a>
+
+                <!-- TikTok -->
+                <a href="https://www.tiktok.com/@prodsanziito" target="_blank" class="contact-card">
+                    <div>
+                        <span class="badge-tag">VÍDEOS CURTOS</span>
+                        <h3 data-i18n="tiktok-title">TikTok <span>↗</span></h3>
+                        <p data-i18n="tiktok-desc">Vídeos rápidos, prévias e bastidores de criação.</p>
+                    </div>
+                    <div class="contact-link">@prodsanziito</div>
+                </a>
+
+                <!-- X / Twitter -->
+                <a href="https://x.com/Sanziito" target="_blank" class="contact-card">
+                    <div>
+                        <span class="badge-tag">SOCIAL</span>
+                        <h3 data-i18n="x-title">X (Twitter) <span>↗</span></h3>
+                        <p data-i18n="x-desc">Atualizações rápidas, reflexões e portfólio visual.</p>
+                    </div>
+                    <div class="contact-link">@Sanziito</div>
+                </a>
+
+                <!-- Discord -->
+                <div class="contact-card" style="cursor: default;">
+                    <div>
+                        <span class="badge-tag">COMUNIDADE & CHAT</span>
+                        <h3 data-i18n="dc-title">Discord</h3>
+                        <p data-i18n="dc-desc">Adicione para conversar diretamente sobre encomendas e projetos.</p>
+                    </div>
+                    <div class="contact-link" style="color: #fff; background: #1f1f1f; padding: 10px 14px; border-radius: 8px; justify-content: space-between;">
+                        <span>sanziitoo</span>
+                        <button onclick="navigator.clipboard.writeText('sanziitoo'); alert('Nome de usuário copiado!');" style="background: transparent; border: none; color: #aaa; cursor: pointer; font-size: 0.85rem;" data-i18n="copy-btn">Copiar</button>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </header>
+
+    <script>
+        const translations = {
+            en: {
+                "nav-home": "HOME",
+                "nav-tracks": "TRACKS",
+                "nav-gear": "GEAR",
+                "nav-prices": "PRICES",
+                "nav-contact": "CONTACT",
+                "nav-terms": "TERMS OF SERVICE",
+                "subtitle": "// CONTACT & NETWORKS",
+                "main-title": "Where to find me",
+                "contact-desc": "Get in touch, follow projects, or send a message on the networks below:",
+                "ig-title": "Instagram <span>↗</span>",
+                "ig-desc": "Follow behind-the-scenes, previews, and studio updates.",
+                "yt-title": "YouTube <span>↗</span>",
+                "yt-desc": "Listen to full soundtracks, OSTs, and production showcases.",
+                "tiktok-title": "TikTok <span>↗</span>",
+                "tiktok-desc": "Quick videos, previews, and creative behind-the-scenes.",
+                "x-title": "X (Twitter) <span>↗</span>",
+                "x-desc": "Quick updates, thoughts, and visual portfolio.",
+                "dc-title": "Discord",
+                "dc-desc": "Add to chat directly about commissions and projects.",
+                "copy-btn": "Copy"
+            },
+            pt: {
+                "nav-home": "INÍCIO",
+                "nav-tracks": "FAIXAS",
+                "nav-gear": "EQUIPAMENTOS",
+                "nav-prices": "PREÇOS",
+                "nav-contact": "CONTATO",
+                "nav-terms": "TERMOS DE SERVIÇO",
+                "subtitle": "// CONTATO & REDES",
+                "main-title": "Onde me encontrar",
+                "contact-desc": "Entre em contato, acompanhe os projetos ou mande uma mensagem nas redes abaixo:",
+                "ig-title": "Instagram <span>↗</span>",
+                "ig-desc": "Acompanhe bastidores, prévias e novidades do estúdio.",
+                "yt-title": "YouTube <span>↗</span>",
+                "yt-desc": "Ouça trilhas completas, OSTs e demonstrações de produções.",
+                "tiktok-title": "TikTok <span>↗</span>",
+                "tiktok-desc": "Vídeos rápidos, prévias e bastidores de criação.",
+                "x-title": "X (Twitter) <span>↗</span>",
+                "x-desc": "Atualizações rápidas, reflexões e portfólio visual.",
+                "dc-title": "Discord",
+                "dc-desc": "Adicione para conversar diretamente sobre encomendas e projetos.",
+                "copy-btn": "Copiar"
+            }
+        };
+
+        let currentLang = localStorage.getItem('sanziito_lang') || 'pt';
+
+        function applyLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('sanziito_lang', currentLang);
+
+            const btn = document.getElementById('lang-toggle');
+            if (btn) btn.textContent = currentLang === 'pt' ? 'EN' : 'PT';
+
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[currentLang][key]) {
+                    el.innerHTML = translations[currentLang][key];
+                }
+            });
+        }
+
+        function toggleLanguage() {
+            const newLang = currentLang === 'pt' ? 'en' : 'pt';
+            applyLanguage(newLang);
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            applyLanguage(currentLang);
+        });
+    </script>
+</body>
+</html>

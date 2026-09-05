@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanziito | Bossfight & Cinematics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .custom-player {
+            background: #141414;
+            border: 1px solid #222;
+            padding: 22px 25px;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+        .player-top { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+        .player-title-area { display: flex; align-items: center; gap: 12px; }
+        .player-top h3 { font-family: 'Syne', sans-serif; font-size: 1.15rem; margin: 0; color: #fff; }
+        .ordem-selo { width: 26px; height: 26px; object-fit: contain; vertical-align: middle; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5)); }
+        .format-badge { font-size: 0.7rem; color: #888; background: #1f1f1f; padding: 4px 8px; border-radius: 4px; font-weight: 600; }
+        
+        .player-controls-area { 
+            display: flex; 
+            align-items: center; 
+            gap: 15px; 
+            flex-wrap: wrap; 
+        }
+        
+        .play-trigger {
+            background: #fff; border: none; width: 38px; height: 38px; border-radius: 50%;
+            cursor: pointer; display: flex; align-items: center; justify-content: center; color: #0a0a0a; flex-shrink: 0;
+            transition: transform 0.2s, background 0.2s;
+        }
+        .play-trigger:hover { transform: scale(1.06); background: #e0e0e0; }
+        .play-trigger svg { width: 18px; height: 18px; fill: currentColor; }
+        
+        .timeline { flex: 1; min-width: 120px; height: 6px; background: #222; border-radius: 3px; cursor: pointer; position: relative; overflow: hidden; }
+        .timeline-progress { width: 0%; height: 100%; background: #fff; border-radius: 3px; transition: width 0.05s linear; }
+        
+        .time-display { font-size: 0.8rem; color: #777; min-width: 75px; text-align: right; font-variant-numeric: tabular-nums; }
+
+        /* Controles de Volume */
+        .volume-area {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-left: auto;
+        }
+        .volume-icon {
+            width: 18px;
+            height: 18px;
+            fill: #777;
+            cursor: pointer;
+            transition: fill 0.2s;
+            flex-shrink: 0;
+        }
+        .volume-icon:hover {
+            fill: #fff;
+        }
+        .volume-slider {
+            width: 75px;
+            height: 5px;
+            -webkit-appearance: none;
+            appearance: none;
+            background: #222;
+            border-radius: 3px;
+            outline: none;
+            cursor: pointer;
+        }
+        .volume-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+            background: #fff;
+            cursor: pointer;
+        }
+        .volume-slider::-moz-range-thumb {
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+            background: #fff;
+            cursor: pointer;
+            border: none;
+        }
+    </style>
+</head>
+<body style="background: #0a0a0a; color: #fff; font-family: 'Inter', sans-serif;">
+
+    <header class="hero-section" style="height: auto; min-height: 100vh;">
+        <nav class="navbar">
+            <a href="index.html" class="logo" style="text-decoration: none;">Sanziito</a>
+            <div class="nav-right">
+                <ul class="nav-links">
+                    <li><a href="index.html" data-pt="INÍCIO" data-en="HOME">INÍCIO</a></li>
+                    <li><a href="sobremim.html" data-pt="SOBRE MIM" data-en="ABOUT ME">SOBRE MIM</a></li>
+                    <li><a href="faixas.html" style="color: #fff;" data-pt="FAIXAS" data-en="TRACKS">FAIXAS</a></li>
+                    <li><a href="preços.html" data-pt="PREÇOS" data-en="PRICING">PREÇOS</a></li>
+                    <li><a href="equipamento.html" data-pt="EQUIPAMENTOS" data-en="GEAR">EQUIPAMENTOS</a></li>
+                    <li><a href="contato.html" data-pt="CONTATO" data-en="CONTACT">CONTATO</a></li>
+                    <li><a href="termos.html" data-pt="TERMOS DE SERVIÇO" data-en="TERMS OF SERVICE">TERMOS DE SERVIÇO</a></li>
+                </ul>
+                <button id="lang-toggle" class="lang-btn">EN</button>
+            </div>
+        </nav>
+
+        <section style="padding: 60px 20px 100px 20px; max-width: 900px; margin: 0 auto; text-align: left;">
+            
+            <!-- SEÇÃO: BOSSFIGHT -->
+            <div style="margin-bottom: 60px;">
+                <h2 style="font-family: 'Syne', sans-serif; font-size: 2.2rem; margin-bottom: 10px; letter-spacing: 1px;" data-pt="BOSSFIGHT" data-en="BOSSFIGHT">BOSSFIGHT</h2>
+                <p style="color: #aaa; font-size: 1.05rem; line-height: 1.7; max-width: 800px; margin-bottom: 30px;" data-pt="Produções épicas, grandiosas e dramáticas desenhadas para momentos decisivos e confrontos de chefes." data-en="Epic, grand, and dramatic productions designed for decisive moments and boss encounters.">
+                    Produções épicas, grandiosas e dramáticas desenhadas para momentos decisivos e confrontos de chefes.
+                </p>
+                <div id="bossfight-container"></div>
+            </div>
+
+            <!-- SEÇÃO: CINEMATICS -->
+            <div>
+                <h2 style="font-family: 'Syne', sans-serif; font-size: 2.2rem; margin-bottom: 10px; letter-spacing: 1px;" data-pt="CINEMATICS" data-en="CINEMATICS">CINEMATICS</h2>
+                <p style="color: #aaa; font-size: 1.05rem; line-height: 1.7; max-width: 800px; margin-bottom: 30px;" data-pt="Trilhas atmosféricas e narrativas focadas em cutscenes e momentos marcantes de introdução ou conclusão." data-en="Atmospheric and narrative tracks focused on cutscenes and memorable intro or outro moments.">
+                    Trilhas atmosféricas e narrativas focadas em cutscenes e momentos marcantes de introdução ou conclusão.
+                </p>
+                <div id="cinematics-container"></div>
+            </div>
+
+        </section>
+    </header>
+
+    <script>
+        // 🎵 Lista de Músicas de Bossfight
+        const bossfightTracks = [
+            {
+                title: "Magistrada - Bossfight",
+                file: "audios/magistrada-fanmade-bossfight.mp3",
+                format: "WAV",
+                seal: "img/ordemselo.png"
+            },
+            {
+                title: "Anfitrião - Bossfight",
+                file: "audios/anfitriao-fanmade-bossfight.mp3",
+                format: "WAV",
+                seal: "img/ordemselo.png"
+            }
+        ];
+
+        // 🎵 Lista de Músicas de Cinematics
+        const cinematicsTracks = [
+            {
+                title: "Nefel - Cinematic",
+                file: "audios/nefel-cinematic.mp3",
+                format: "WAV"
+            }
+        ];
+
+        // Função para renderizar e ativar os players
+        function renderPlaylist(tracks, containerId) {
+            const container = document.getElementById(containerId);
+            
+            if (tracks.length === 0) {
+                return; 
+            }
+
+            tracks.forEach((track) => {
+                const sealHTML = track.seal ? `<img src="${track.seal}" alt="Selo Ordem Paranormal" class="ordem-selo" title="Fanwork licenciado / Ordem Paranormal">` : '';
+                
+                const playerHTML = `
+                    <div class="custom-player">
+                        <div class="player-top">
+                            <div class="player-title-area">
+                                <h3>${track.title}</h3>
+                                ${sealHTML}
+                            </div>
+                            <span class="format-badge">${track.format}</span>
+                        </div>
+                        <div class="player-controls-area">
+                            <button class="play-trigger" title="Play/Pause">
+                                <svg class="icon-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                <svg class="icon-pause" style="display:none;" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                            </button>
+                            <div class="timeline">
+                                <div class="timeline-progress"></div>
+                            </div>
+                            <span class="time-display">0:00 / 0:00</span>
+                            <div class="volume-area">
+                                <svg class="volume-icon" viewBox="0 0 24 24" title="Mutar/Desmutar">
+                                    <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                </svg>
+                                <input type="range" class="volume-slider" min="0" max="1" step="0.01" value="1" title="Volume">
+                            </div>
+                        </div>
+                        <audio class="audio-element" preload="metadata">
+                            <source src="${track.file}" type="audio/wav">
+                            Seu navegador não suporta áudio.
+                        </audio>
+                    </div>
+                `;
+                container.innerHTML += playerHTML;
+            });
+        }
+
+        // Renderiza as playlists
+        renderPlaylist(bossfightTracks, 'bossfight-container');
+        renderPlaylist(cinematicsTracks, 'cinematics-container');
+
+        // Mecânica global de controle de áudio (Play/Pause, Progresso, Timeline e Volume)
+        document.querySelectorAll('.custom-player').forEach(player => {
+            const audio = player.querySelector('.audio-element');
+            const playBtn = player.querySelector('.play-trigger');
+            const iconPlay = player.querySelector('.icon-play');
+            const iconPause = player.querySelector('.icon-pause');
+            const timeline = player.querySelector('.timeline');
+            const progress = player.querySelector('.timeline-progress');
+            const timeDisplay = player.querySelector('.time-display');
+            const volumeSlider = player.querySelector('.volume-slider');
+            const volumeIcon = player.querySelector('.volume-icon');
+
+            function formatTime(seconds) {
+                const minutes = Math.floor(seconds / 60);
+                const remainingSeconds = Math.floor(seconds % 60);
+                return `${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
+            }
+
+            audio.addEventListener('loadedmetadata', () => {
+                timeDisplay.textContent = `0:00 / ${formatTime(audio.duration)}`;
+            });
+
+            playBtn.addEventListener('click', () => {
+                document.querySelectorAll('.audio-element').forEach(otherAudio => {
+                    if (otherAudio !== audio && !otherAudio.paused) {
+                        otherAudio.pause();
+                        const otherPlayer = otherAudio.closest('.custom-player');
+                        otherPlayer.querySelector('.icon-play').style.display = 'block';
+                        otherPlayer.querySelector('.icon-pause').style.display = 'none';
+                    }
+                });
+
+                if (audio.paused) {
+                    audio.play();
+                    iconPlay.style.display = 'none';
+                    iconPause.style.display = 'block';
+                } else {
+                    audio.pause();
+                    iconPlay.style.display = 'block';
+                    iconPause.style.display = 'none';
+                }
+            });
+
+            audio.addEventListener('timeupdate', () => {
+                if (audio.duration) {
+                    const percentage = (audio.currentTime / audio.duration) * 100;
+                    progress.style.width = `${percentage}%`;
+                    timeDisplay.textContent = `${formatTime(audio.currentTime)} / ${formatTime(audio.duration)}`;
+                }
+            });
+
+            timeline.addEventListener('click', (e) => {
+                if (audio.duration) {
+                    const rect = timeline.getBoundingClientRect();
+                    const clickPosition = (e.clientX - rect.left) / timeline.offsetWidth;
+                    audio.currentTime = clickPosition * audio.duration;
+                }
+            });
+
+            audio.addEventListener('ended', () => {
+                iconPlay.style.display = 'block';
+                iconPause.style.display = 'none';
+                progress.style.width = '0%';
+            });
+
+            // Lógica do Volume
+            volumeSlider.addEventListener('input', (e) => {
+                audio.volume = e.target.value;
+                updateVolumeIcon(audio.volume);
+            });
+
+            let lastVolume = 1;
+            volumeIcon.addEventListener('click', () => {
+                if (audio.volume > 0) {
+                    lastVolume = audio.volume;
+                    audio.volume = 0;
+                    volumeSlider.value = 0;
+                } else {
+                    audio.volume = lastVolume;
+                    volumeSlider.value = lastVolume;
+                }
+                updateVolumeIcon(audio.volume);
+            });
+
+            function updateVolumeIcon(vol) {
+                if (vol == 0) {
+                    volumeIcon.innerHTML = '<path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/>';
+                } else {
+                    volumeIcon.innerHTML = '<path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>';
+                }
+            }
+        });
+    </script>
+    <!-- Script global de tradução do site -->
+    <script src="js/script.js"></script>
+</body>
+</html>

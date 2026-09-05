@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanziito | Preços e Pacotes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .pricing-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        .tab-btn {
+            background: #141414;
+            border: 1px solid #222;
+            color: #888;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-family: 'Syne', sans-serif;
+            font-weight: 700;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .tab-btn:hover {
+            border-color: #444;
+            color: #fff;
+        }
+        .tab-btn.active {
+            background: #fff;
+            color: #0a0a0a;
+            border-color: #fff;
+        }
+        .pricing-section {
+            display: none;
+            width: 100%;
+        }
+        .pricing-section.active {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .price-card {
+            background: #141414;
+            border: 1px solid #222;
+            padding: 25px;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: border-color 0.2s;
+        }
+        .price-card:hover {
+            border-color: #333;
+        }
+        .price-card h3 {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.15rem;
+            margin: 0 0 10px 0;
+            color: #fff;
+        }
+        .price-value {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.4rem;
+            color: #fff;
+            font-weight: 700;
+            margin-top: 15px;
+            letter-spacing: -0.5px;
+        }
+        .price-desc {
+            font-size: 0.9rem;
+            color: #888;
+            margin: 0;
+            line-height: 1.5;
+        }
+        .badge-tag {
+            font-size: 0.7rem;
+            color: #888;
+            background: #1f1f1f;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 12px;
+            width: fit-content;
+        }
+    </style>
+</head>
+<body style="background: #0a0a0a; color: #fff; font-family: 'Inter', sans-serif;">
+
+    <header class="hero-section" style="height: auto; min-height: 100vh;">
+        <nav class="navbar">
+            <a href="index.html" class="logo" style="text-decoration: none;">Sanziito</a>
+            <div class="nav-right">
+                <ul class="nav-links">
+                    <li><a href="index.html" data-i18n="nav-home">INÍCIO</a></li>
+                    <li><a href="sobremim.html" data-pt="SOBRE MIM" data-en="ABOUT ME">SOBRE MIM</a></li>
+                    <li><a href="faixas.html" data-i18n="nav-tracks">FAIXAS</a></li>
+                    <li><a href="equipamento.html" data-i18n="nav-gear">EQUIPAMENTOS</a></li>
+                    <li><a href="preços.html" style="color: #fff;" data-i18n="nav-prices">PREÇOS</a></li>
+                    <li><a href="contato.html" data-i18n="nav-contact">CONTATO</a></li>
+                    <li><a href="termos.html" data-i18n="nav-terms">TERMOS DE SERVIÇO</a></li>
+                </ul>
+                <button id="lang-toggle" class="lang-btn" onclick="toggleLanguage()">EN</button>
+            </div>
+        </nav>
+
+        <section style="padding: 60px 20px 100px 20px; max-width: 1100px; margin: 0 auto; width: 100%; box-sizing: border-box; text-align: left;">
+            
+            <div style="text-align: center; margin-bottom: 40px;">
+                <span style="font-size: 0.85rem; color: #888; letter-spacing: 2px; text-transform: uppercase; display: block; margin-bottom: 10px;" data-i18n="subtitle">// TABELA DE VALORES</span>
+                <h2 style="font-family: 'Syne', sans-serif; font-size: 2.5rem; margin: 0; letter-spacing: 1px;" data-i18n="main-title">Investimento & Serviços</h2>
+            </div>
+
+            <!-- Botões de Alternância (Abas) -->
+            <div class="pricing-tabs">
+                <button class="tab-btn active" onclick="switchTab('individuais', event)" data-i18n="tab-individual">Trilhas Individuais</button>
+                <button class="tab-btn" onclick="switchTab('pacotes', event)" data-i18n="tab-packages">Pacotes</button>
+                <button class="tab-btn" onclick="switchTab('extras', event)" data-i18n="tab-extras">Extras</button>
+            </div>
+
+            <!-- SEÇÃO 1: TRILHAS INDIVIDUAIS -->
+            <div id="individuais" class="pricing-section active">
+                <div class="price-card">
+                    <div>
+                        <span class="badge-tag" data-i18n="badge-individual">INDIVIDUAL</span>
+                        <h3 data-i18n="item-1-title">Aberturas e Finalizações (Simples)</h3>
+                        <p class="price-desc" data-i18n="item-1-desc">Ideal para introduções diretas e créditos finais concisos.</p>
+                    </div>
+                    <div class="price-value" data-br="R$ 80,00" data-en="US$ 16.00">R$ 80,00</div>
+                </div>
+
+                <div class="price-card">
+                    <div>
+                        <span class="badge-tag" data-i18n="badge-individual">INDIVIDUAL</span>
+                        <h3 data-i18n="item-2-title">Aberturas e Finalizações (Complexas)</h3>
+                        <p class="price-desc" data-i18n="item-2-desc">Produções detalhadas com arranjos complexos e alta imersão.</p>
+                    </div>
+                    <div class="price-value" data-br="R$ 210,00" data-en="US$ 42.00">R$ 210,00</div>
+                </div>
+
+                <div class="price-card">
+                    <div>
+                        <span class="badge-tag" data-i18n="badge-individual">INDIVIDUAL</span>
+                        <h3 data-i18n="item-3-title">Ambientações e Atmosferas</h3>
+                        <p class="price-desc" data-i18n="item-3-desc">Paisagens sonoras profundas para locações e exploração.</p>
+                    </div>
+                    <div class="price-value" data-br="R$ 30,00" data-en="US$ 6.00">R$ 30,00</div>
+                </div>
+
+                <div class="price-card">
+                    <div>
+                        <span class="badge-tag" data-i18n="badge-individual">INDIVIDUAL</span>
+                        <h3 data-i18n="item-4-title">Interlúdios e Suspenses</h3>
+                        <p class="price-desc" data-i18n="item-4-desc">Atmosferas tensas e momentos de transição calculada.</p>
+                    </div>
+                    <div class="price-value" data-br="R$ 50,00" data-en="US$ 10.00">R$ 50,00</div>
+                </div>
+
+                <div class="price-card">
+                    <div>
+                        <span class="badge-tag" data-i18n="badge-individual">INDIVIDUAL</span>
+                        <h3 data-i18n="item-5-title">Combates</h3>
+                        <p class="price-desc" data-i18n="item-5-desc">Trilhas enérgicas e dinâmicas focadas em ação e confronto.</p>
+                    </div>
+                    <div class="price-value" data-br="R$ 80,00" data-en="US$ 16.00">R$ 80,00</div>
+                </div>
+
+                <div class="price-card">
+                    <div>
+                        <span class="badge-tag" data-i18n="badge-individual">INDIVIDUAL</span>
+                        <h3 data-i18n="item-12-title">Combate (Complexo)</h3>
+                        <p class="price-desc" data-i18n="item-12-desc">Trilha para combate intenso que não é bossfight, estruturada com introdução, meio e fim.</p>
+                    </div>
+                    <div class="price-value" data-br="R$ 120,00" data-en="US$ 24.00">R$ 120,00</div>
+                </div>
+
+                <div class="price-card">
+                    <div>
+                        <span class="badge-tag" data-i18n="badge-individual">INDIVIDUAL</span>
+                        <h3 data-i18n="item-6-title">Tema (Simples)</h3>
+                        <p class="price-desc" data-i18n="item-6-desc">Tema principal focado em identidade de personagem ou local.</p>
+                    </div>
+                    <div class="price-value" data-br="R$ 60,00" data-en="US$ 12.00">R$ 60,00</div>
+                </div>
+
+                <div class="price-card">
+                    <div>
+                        <span class="badge-tag" data-i18n="badge-individual">INDIVIDUAL</span>
+                        <h3 data-i18n="item-7-title">Tema (Complexo)</h3>
+                        <p class="price-desc" data-i18n="item-7-desc">Tema principal elaborado com múltiplas camadas e desenvolvimento.</p>
+                    </div>
+                    <div class="price-value" data-br="R$ 110,00" data-en="US$ 22.00">R$ 110,00</div>
+                </div>
+
+                <div class="price-card">
+                    <div>
+                        <span class="badge-tag" data-i18n="badge-individual">INDIVIDUAL</span>
+                        <h3 data-i18n="item-8-title">Cinematics (Simples)</h3>
+                        <p class="price-desc" data-i18n="item-8-desc">Trilha dramática para cutscenes e momentos narrativos.</p>
+                    </div>
+                    <div class="price-value" data-br="R$ 120,00" data-en="US$ 24.00">R$ 120,00</div>
+                </div>
+
+                <div class="price-card">
+                    <div>
+                        <span class="badge-tag" data-i18n="badge-individual">INDIVIDUAL</span>
+                        <h3 data-i18n="item-9-title">Cinematics (Complexas)</h3>
+                        <p class="price-desc" data-i18n="item-9-desc">Produção grandiosa e imersiva para cenas cinematográficas de alto impacto.</p>
+                    </div>
+                    <div class="price-value" data-br="R$ 200,00" data-en="US$ 40.00">R$ 200,00</div>
+                </div>
+
+                <div class="price-card">
+                    <div>
+                        <span class="badge-tag" data-i18n="badge-individual">INDIVIDUAL</span>
+                        <h3 data-i18n="item-10-title">Bossfights (Simples)</h3>
+                        <p class="price-desc" data-i18n="item-10-desc">Música de confronto contra chefes com forte presença rítmica.</p>
+                    </div>
+                    <div class="price-value" data-br="R$ 120,00" data-en="US$ 24.00">R$ 120,00</div>
+                </div>
+
+                <div class="price-card">
+                    <div>
+                        <span class="badge-tag" data-i18n="badge-individual">INDIVIDUAL</span>
+                        <h3 data-i18n="item-11-title">Bossfights (Complexas)</h3>
+                        <p class="price-desc" data-i18n="item-11-desc">Trilha épica e monumental para batalhas decisivas e fases avançadas.</p>
+                    </div>
+                    <div class="price-value" data-br="R$ 200,00" data-en="US$ 40.00">R$ 200,00</div>
+                </div>
+            </div>
+
+            <!-- SEÇÃO 2: PACOTES -->
+            <div id="pacotes" class="pricing-section">
+                <div class="price-card">
+                    <div>
+                        <span class="badge-tag" data-i18n="badge-pack-1">PACOTE INICIAL</span>
+                        <h3 data-i18n="pack-1-title">Pacote Inicial</h3>
+                        <p class="price-desc" data-i18n="pack-1-desc">Inclui um total de 8 músicas customizadas para o seu projeto.</p>
+                    </div>
+                    <div class="price-value" data-br="R$ 440,00" data-en="US$ 88.00">R$ 440,00</div>
+                </div>
+
+                <div class="price-card">
+                    <div>
+                        <span class="badge-tag" data-i18n="badge-pack-2">PACOTE MEDIANO</span>
+                        <h3 data-i18n="pack-2-title">Pacote Mediano</h3>
+                        <p class="price-desc" data-i18n="pack-2-desc">Inclui um total de 16 músicas para cobrir diversas cenas e ambientes.</p>
+                    </div>
+                    <div class="price-value" data-br="R$ 800,00" data-en="US$ 160.00">R$ 800,00</div>
+                </div>
+
+                <div class="price-card">
+                    <div>
+                        <span class="badge-tag" data-i18n="badge-pack-3">PACOTE PREMIUM</span>
+                        <h3 data-i18n="pack-3-title">Pacote Premium</h3>
+                        <p class="price-desc" data-i18n="pack-3-desc">Inclui um total de 40 músicas para trilha sonora completa e abrangente.</p>
+                    </div>
+                    <div class="price-value" data-br="R$ 2.000,00" data-en="US$ 400.00">R$ 2.000,00</div>
+                </div>
+            </div>
+
+            <!-- SEÇÃO 3: EXTRAS -->
+            <div id="extras" class="pricing-section">
+                <div class="price-card">
+                    <div>
+                        <span class="badge-tag" data-i18n="badge-extra">ADICIONAL</span>
+                        <h3 data-i18n="extra-1-title">Versão em Loop</h3>
+                        <p class="price-desc" data-i18n="extra-1-desc">Adaptação da faixa para loop contínuo sem quebras perceptíveis.</p>
+                    </div>
+                    <div class="price-value" data-br="+R$ 20,00" data-en="+US$ 4.00">+R$ 20,00</div>
+                </div>
+
+                <div class="price-card">
+                    <div>
+                        <span class="badge-tag" data-i18n="badge-extra">ADICIONAL</span>
+                        <h3 data-i18n="extra-2-title">Sound Design</h3>
+                        <p class="price-desc" data-i18n="extra-2-desc">Efeitos sonoros e ambientação imersiva sob medida.</p>
+                    </div>
+                    <div class="price-value" data-br="a partir de R$ 30,00" data-en="from US$ 6.00">a partir de R$ 30,00</div>
+                </div>
+
+                <div class="price-card">
+                    <div>
+                        <span class="badge-tag" data-i18n="badge-extra">ADICIONAL</span>
+                        <h3 data-i18n="extra-3-title">Entrega Prioritária</h3>
+                        <p class="price-desc" data-i18n="extra-3-desc">Prioridade máxima na fila de produção e prazos reduzidos.</p>
+                    </div>
+                    <div class="price-value" data-br="+50% do valor" data-en="+50% of total">+50% do valor</div>
+                </div>
+
+                <div class="price-card">
+                    <div>
+                        <span class="badge-tag" data-i18n="badge-extra">ADICIONAL</span>
+                        <h3 data-i18n="extra-4-title">Mixagem para Dublagens</h3>
+                        <p class="price-desc" data-i18n="extra-4-desc">Tratamento e balanceamento de áudio voltado para falas e dublagens.</p>
+                    </div>
+                    <div class="price-value" data-br="R$ 20,00 <span style='font-size: 0.9rem; font-weight: 400; color: #888;'>/ min</span>" data-en="US$ 4.00 <span style='font-size: 0.9rem; font-weight: 400; color: #888;'>/ min</span>">R$ 20,00 <span style="font-size: 0.9rem; font-weight: 400; color: #888;">/ min</span></div>
+                </div>
+            </div>
+
+        </section>
+    </header>
+
+    <script>
+        function switchTab(tabId, event) {
+            document.querySelectorAll('.pricing-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.getElementById(tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+
+        const translations = {
+            en: {
+                "nav-home": "HOME",
+                "nav-tracks": "TRACKS",
+                "nav-gear": "GEAR",
+                "nav-prices": "PRICES",
+                "nav-contact": "CONTACT",
+                "nav-terms": "TERMS OF SERVICE",
+                "subtitle": "// PRICING TABLE",
+                "main-title": "Investment & Services",
+                "tab-individual": "Individual Tracks",
+                "tab-packages": "Packages",
+                "tab-extras": "Extras",
+                "badge-individual": "INDIVIDUAL",
+                "badge-pack-1": "STARTER PACK",
+                "badge-pack-2": "MEDIUM PACK",
+                "badge-pack-3": "PREMIUM PACK",
+                "badge-extra": "ADDITIONAL",
+                
+                "item-1-title": "Openings and Endings (Simple)",
+                "item-1-desc": "Ideal for direct introductions and concise final credits.",
+                "item-2-title": "Openings and Endings (Complex)",
+                "item-2-desc": "Detailed productions with complex arrangements and high immersion.",
+                "item-3-title": "Ambients and Atmospheres",
+                "item-3-desc": "Deep soundscapes for locations and exploration.",
+                "item-4-title": "Interludes and Suspense",
+                "item-4-desc": "Tense atmospheres and calculated transition moments.",
+                "item-5-title": "Combats",
+                "item-5-desc": "Energetic and dynamic tracks focused on action and confrontation.",
+                "item-12-title": "Combat (Complex)",
+                "item-12-desc": "Intense non-boss combat track, structured with an introduction, middle, and end.",
+                "item-6-title": "Theme (Simple)",
+                "item-6-desc": "Main theme focused on character or location identity.",
+                "item-7-title": "Theme (Complex)",
+                "item-7-desc": "Elaborated main theme with multiple layers and development.",
+                "item-8-title": "Cinematics (Simple)",
+                "item-8-desc": "Dramatic track for cutscenes and narrative moments.",
+                "item-9-title": "Cinematics (Complex)",
+                "item-9-desc": "Grand and immersive production for high-impact cinematic scenes.",
+                "item-10-title": "Bossfights (Simple)",
+                "item-10-desc": "Boss confrontation music with a strong rhythmic presence.",
+                "item-11-title": "Bossfights (Complex)",
+                "item-11-desc": "Epic and monumental track for decisive battles and advanced stages.",
+
+                "pack-1-title": "Starter Pack",
+                "pack-1-desc": "Includes a total of 8 customized tracks for your project.",
+                "pack-2-title": "Medium Pack",
+                "pack-2-desc": "Includes a total of 16 tracks to cover various scenes and environments.",
+                "pack-3-title": "Premium Pack",
+                "pack-3-desc": "Includes a total of 40 tracks for a complete and comprehensive soundtrack.",
+
+                "extra-1-title": "Loop Version",
+                "extra-1-desc": "Track adaptation for continuous looping without perceptible breaks.",
+                "extra-2-title": "Sound Design",
+                "extra-2-desc": "Custom sound effects and immersive ambient design.",
+                "extra-3-title": "Priority Delivery",
+                "extra-3-desc": "Top priority in production queue and reduced deadlines.",
+                "extra-4-title": "Dubbing Mixing",
+                "extra-4-desc": "Audio treatment and balancing focused on speech and voiceovers."
+            },
+            pt: {
+                "nav-home": "INÍCIO",
+                "nav-tracks": "FAIXAS",
+                "nav-gear": "EQUIPAMENTOS",
+                "nav-prices": "PREÇOS",
+                "nav-contact": "CONTATO",
+                "nav-terms": "TERMOS DE SERVIÇO",
+                "subtitle": "// TABELA DE VALORES",
+                "main-title": "Investimento & Serviços",
+                "tab-individual": "Trilhas Individuais",
+                "tab-packages": "Pacotes",
+                "tab-extras": "Extras",
+                "badge-individual": "INDIVIDUAL",
+                "badge-pack-1": "PACOTE INICIAL",
+                "badge-pack-2": "PACOTE MEDIANO",
+                "badge-pack-3": "PACOTE PREMIUM",
+                "badge-extra": "ADICIONAL",
+
+                "item-1-title": "Aberturas e Finalizações (Simples)",
+                "item-1-desc": "Ideal para introduções diretas e créditos finais concisos.",
+                "item-2-title": "Aberturas e Finalizações (Complexas)",
+                "item-2-desc": "Produções detalhadas com arranjos complexos e alta imersão.",
+                "item-3-title": "Ambientações e Atmosferas",
+                "item-3-desc": "Paisagens sonoras profundas para locações e exploração.",
+                "item-4-title": "Interlúdios e Suspenses",
+                "item-4-desc": "Atmosferas tensas e momentos de transição calculada.",
+                "item-5-title": "Combates",
+                "item-5-desc": "Trilhas enérgicas e dinâmicas focadas em ação e confronto.",
+                "item-12-title": "Combate (Complexo)",
+                "item-12-desc": "Trilha para combate intenso que não é bossfight, estruturada com introdução, meio e fim.",
+                "item-6-title": "Tema (Simples)",
+                "item-6-desc": "Tema principal focado em identidade de personagem ou local.",
+                "item-7-title": "Tema (Complexo)",
+                "item-7-desc": "Tema principal elaborado com múltiplas camadas e desenvolvimento.",
+                "item-8-title": "Cinematics (Simples)",
+                "item-8-desc": "Trilha dramática para cutscenes e momentos narrativos.",
+                "item-9-title": "Cinematics (Complexas)",
+                "item-9-desc": "Produção grandiosa e imersiva para cenas cinematográficas de alto impacto.",
+                "item-10-title": "Bossfights (Simples)",
+                "item-10-desc": "Música de confronto contra chefes com forte presença rítmica.",
+                "item-11-title": "Bossfights (Complexas)",
+                "item-11-desc": "Trilha épica e monumental para batalhas decisivas e fases avançadas.",
+
+                "pack-1-title": "Pacote Inicial",
+                "pack-1-desc": "Inclui um total de 8 músicas customizadas para o seu projeto.",
+                "pack-2-title": "Pacote Mediano",
+                "pack-2-desc": "Inclui um total de 16 músicas para cobrir diversas cenas e ambientes.",
+                "pack-3-title": "Pacote Premium",
+                "pack-3-desc": "Inclui um total de 40 músicas para trilha sonora completa e abrangente.",
+
+                "extra-1-title": "Versão em Loop",
+                "extra-1-desc": "Adaptação da faixa para loop contínuo sem quebras perceptíveis.",
+                "extra-2-title": "Sound Design",
+                "extra-2-desc": "Efeitos sonoros e ambientação imersiva sob medida.",
+                "extra-3-title": "Entrega Prioritária",
+                "extra-3-desc": "Prioridade máxima na fila de produção e prazos reduzidos.",
+                "extra-4-title": "Mixagem para Dublagens",
+                "extra-4-desc": "Tratamento e balanceamento de áudio voltado para falas e dublagens."
+            }
+        };
+
+        // Pega o idioma salvo no navegador ou define 'pt' como padrão
+        let currentLang = localStorage.getItem('sanziito_lang') || 'pt';
+
+        function applyLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('sanziito_lang', currentLang); // Salva a escolha
+            
+            const btn = document.getElementById('lang-toggle');
+            if (btn) btn.textContent = currentLang === 'pt' ? 'EN' : 'PT';
+
+            // Traduz textos normais
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[currentLang][key]) {
+                    el.innerHTML = translations[currentLang][key];
+                }
+            });
+
+            // Altera preços entre Reais e Dólares
+            document.querySelectorAll('.price-value').forEach(el => {
+                if (currentLang === 'en') {
+                    el.innerHTML = el.getAttribute('data-en');
+                } else {
+                    el.innerHTML = el.getAttribute('data-br');
+                }
+            });
+        }
+
+        function toggleLanguage() {
+            const newLang = currentLang === 'pt' ? 'en' : 'pt';
+            applyLanguage(newLang);
+        }
+
+        // Aplica o idioma automaticamente assim que a página carrega
+        window.addEventListener('DOMContentLoaded', () => {
+            applyLanguage(currentLang);
+        });
+    </script>
+</body>
+</html>
